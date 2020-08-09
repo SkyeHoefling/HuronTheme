@@ -39,20 +39,20 @@ pre.code-snippet {
         border: none;
         padding:0;
         display:block;
+    }
 
-        &:before {
-            top: -2.8em;
-            right: 30px;
-            background: $codeblock-background;
-            font-size: 10px;
-            font-family: var(--ck-font-face);
-            line-height: 16px;
-            padding: $codeblock-padding-topbottom $codeblock-padding-leftright;
-            color: #fff;
-            white-space: nowrap;
-            content: 'Copy';
-            position: absolute;
-            cursor: pointer;
-        }
+    .code-snippet-copy {
+        top: 0;
+        right: 50px;
+        background: $codeblock-background;
+        font-size: 10px;
+        font-family: var(--ck-font-face);
+        line-height: 16px;
+        padding: $codeblock-padding-topbottom $codeblock-padding-leftright;
+        color: #fff;
+        white-space: nowrap;
+        content: 'Copy';
+        position: absolute;
+        cursor: pointer;
     }
 }
