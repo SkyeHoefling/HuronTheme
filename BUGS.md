@@ -1,0 +1,1 @@
+The down button that brings you to the content doesn't work correctly with the hero navigation. It does work correctly with the sticky nave. We need to figure out a way to adjust the threshold via jquery.

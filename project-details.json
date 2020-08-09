@@ -1,0 +1,9 @@
+{
+	"project": "HuronTheme",
+	"version": "2.1.0",
+	"author": "Andrew Hoefling",
+	"company": "AndrewHoefling",
+	"url": "www.andrewhoefling.com",
+    "email": "andrew@hoefling.me",
+    "description": "A DNN Theme built using Foudation 6 for Sites"
+}

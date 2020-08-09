@@ -1,0 +1,140 @@
+main, header, footer {
+   article {
+       .label a{
+           color: $white;
+           text-decoration: none;
+           font-size: 1.5em;
+           
+           &:hover, &:visited, &:visited {
+               color: $white;
+               text-decoration: none;
+           }
+       }
+
+       h2 {
+           a {
+               color: $primary-color;
+               text-decoration: none;
+
+               &:hover, &:visited, &:visited {
+                   text-decoration: none;
+               }
+           }
+       }
+   }
+   .category {
+       background: $primary-color;
+       color: white;
+       border-radius: 10px;
+       padding: .25em .5em;
+       font-weight: 700;
+
+       a {
+           text-decoration: none;
+           color: white;
+           &:hover, &:visited, &:visited {
+               text-decoration: none;
+           }
+       }
+   }
+
+   a.share {
+       padding: .5em 1em;
+       margin: .5em;
+       border: solid 1px $primary-color;
+       text-decoration: none;
+       display: inline-flex;
+       font-size: 1.25em;
+
+       @media screen and (min-width: 901px) {
+           &:first-child {
+               margin-left:0;
+           }
+       }
+
+       @media screen and (max-width:900px) {
+           display: flex;
+           font-size: 1.5em;
+           margin-top: 1em;
+           margin-bottom: 1em;
+           color: white;
+
+           i {
+               text-align: center;
+               margin:auto;
+           }
+
+           &.facebook {
+               background-color: #3b5998;
+           }
+   
+           &.twitter {
+               background-color: #4099FF;
+           }
+           
+           &.reddit {
+               background-color: #ff5700;
+           }
+           
+           &.linkedin {
+               background-color: #0077b5;
+           }
+           
+           &.email {
+               background-color: #444444;
+           }
+       }
+
+       &.facebook:hover {
+           background-color: #3b5998;
+           color: white;
+       }
+
+       &.twitter:hover {
+           background-color: #4099FF;
+           color: white;
+       }
+       
+       &.reddit:hover {
+           background-color: #ff5700;
+           color: white;
+       }
+       
+       &.linkedin:hover {
+           background-color: #0077b5;
+           color: white;
+       }
+       
+       &.email:hover {
+           background-color: #444444;
+           color: white;
+       }
+   }
+
+   a.tag {
+       background: $light-grey;
+       padding: .5em 1em;
+       margin: .5em 2em .5em 0em;
+       text-decoration: none;
+       color: black;
+       display: inline-flex;
+
+       &:hover {
+           color: $secondary-color;
+       }
+
+       @media screen and (max-width:900px) {
+           display: flex;
+           justify-content: center;
+           text-align: center;
+           width:100%;
+           margin-top:1em;
+           margin-bottom:1em;
+           font-size: 1.5rem;
+       }
+   }
+
+   .dark {
+       color: $primary-color;
+   }
+}

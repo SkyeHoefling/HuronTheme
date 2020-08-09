@@ -1,0 +1,39 @@
+.drilldown {
+   .is-drilldown-submenu-parent>a {
+     padding-right: 2em;
+ 
+     &::after {
+       border-color: transparent $white transparent;
+     }
+   }
+   
+   .js-drilldown-back > a {
+     background-color: $dark-grey;
+     color: $white;
+ 
+       &::before {
+         border-color: transparent $white transparent;
+     }
+   }
+ }
+ 
+ .dropdown {
+   li {
+     .is-submenu-item {
+      background-color: $primary-color;
+     }
+ 
+     .is-active > a {
+       width: 100%;
+     }
+ 
+     a {
+       color: $font-color;
+       text-decoration: none;
+       
+       &:hover, &:focused, &:visited {
+         color: $font-color;
+       }
+     }
+   }
+ }

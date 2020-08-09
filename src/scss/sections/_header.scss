@@ -1,0 +1,170 @@
+header {
+   $active-radius: 20px;
+
+   .portal-name {
+       margin-left: 0;
+       margin-right: 0;
+       padding-left: 0;
+       padding-right: 0;
+   }
+
+   li {
+       @media screen and (max-width: 39.9375em) {
+           .menu-text {
+               a {
+                   margin: 0;
+                   padding: 0;
+               }
+
+               img {
+                   height: 3em;
+                   margin-right: 2em;
+               }
+           }
+       }
+
+       &.active > a {
+           border-radius: $active-radius;
+       }
+
+       &.hamburger-menu {
+           margin-left: 1em;
+           align-items: center;
+       }
+   }
+
+   .top-bar {
+       .right {
+           padding-right: 2em;
+
+           .menu-icon {
+               color: $primary-color;
+           }
+       }
+
+       span {
+           display: flex;
+           align-items: center;
+       }
+
+       .portal-name {
+           font-size: 1.5rem;
+           color: $white;
+
+           &:hover, &:focus, &:visited {
+               color: $white;
+           }
+       }
+   }
+
+   .hidden {
+       display: none !important;
+   }
+
+   .title-bar {  
+       display: flex;  
+       padding: 1.5em 3em;
+       background: $white;
+       color: $primary-color;
+
+       @media screen and (max-width: 39.9375em) {
+           padding: 1.5em;
+       }
+
+       span {
+           display: block;
+           align-items: center;
+
+           a {
+               float:left;
+           }
+       }
+
+       .portal-name {
+           font-size: 1.5rem;
+           margin-left:.5em;
+           @media screen and (max-width: 39.9375em) {
+               padding: 1.5%;
+           }
+
+           &:hover, &:focus, &:visited {
+               color: $primary-color;
+           }
+       }
+
+       img {
+           height: 2.5em;
+
+           @media screen and (max-width: 39.9375em) {
+               height: 3em;
+           }
+       }
+
+       li {           
+           &.active > a {
+               background: transparent;
+               color: $secondary-color;
+               border: $secondary-color 1px solid;
+   
+               &:hover {
+                   background: $light-grey;
+               }
+           }
+
+           .submenu, .is-submenu-item {
+               background: $white;
+               color: $primary-color;
+           }
+       }
+
+       .menu-icon {
+           &::after {
+               background: $primary-color;
+               -webkit-box-shadow: 0 7px 0 $primary-color, 0 14px 0 $primary-color;
+               box-shadow: 0 7px 0 $primary-color, 0 14px 0 $primary-color
+           }
+       }
+   }
+
+   // prevents dropdown from going off screen
+   .dropdown.menu:not(.vertical) .is-dropdown-submenu.first-sub:last-child {
+       left: -100px;
+   }
+
+   .off-canvas {
+       width: 30em;
+
+       @media screen and (Max-width: 63.9375em) {
+           width: 70%;
+       }
+
+       &.is-closed {
+           transform: translateX(100%);
+       }        
+
+       .nav-container {
+           margin: 1.5em;
+           
+           &:first-of-type {
+               margin-top:3em;
+               
+           }
+           &:last-of-type {
+               margin-bottom:3em;
+           }
+       }
+
+       .menu {
+           li {
+               margin: 1em 0;
+               
+               &.active > a {
+                   border-radius: 0;
+                   margin: 0 2em;
+                   padding: .75em 1em;
+                   display: inline;
+               }
+           }
+       }
+   }
+}
