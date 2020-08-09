@@ -1,0 +1,24 @@
+/* ckeditor styles will slightly modify this */
+
+pre {
+    border: 1px solid #c4c4c4;
+    padding-left: 1em !important;
+
+    &[data-language]:after {
+        top: -1px;
+        right: 10px;
+        background: $codeblock-background;
+        font-size: 10px;
+        font-family: var(--ck-font-face);
+        line-height: 16px;
+        padding: $codeblock-padding-topbottom $codeblock-padding-leftright;
+        color: #fff;
+        white-space: nowrap;
+        content: attr(data-language);
+        position: absolute;
+    }
+    
+    code {
+        border: none;
+    }
+}
