@@ -1,0 +1,41 @@
+@using DotNetNuke.Web.DDRMenu;
+@using System.Dynamic;
+@inherits DotNetNuke.Web.Razor.DotNetNukeWebPage<dynamic>
+  
+@RenderPages(Model.Source.root.Children)
+
+@helper RenderPages(IEnumerable<MenuNode> pages, bool isNested = false)
+{
+    if (!pages.Any())
+    {
+        return;
+    }
+
+    var classes = isNested ?
+        "menu" :
+        "dropdown menu";
+    var attributes = isNested ?
+        string.Empty :
+        "data-dropdown-menu";
+
+    <ul class="menu vertical">
+        @foreach (var page in pages)
+        {
+            <li class="active">
+                @if (page.Enabled)
+                {
+                    <a href="@page.Url">@page.Text</a>
+                }
+                else
+                {
+                    <a href="#">@page.Text</a>
+                }
+
+                @*@if (page.HasChildren())
+                {
+                    @RenderPages(page.Children, true)
+                }*@
+            </li>
+        }
+    </ul> 
+}

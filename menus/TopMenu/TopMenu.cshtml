@@ -1,0 +1,48 @@
+@using DotNetNuke.Web.DDRMenu;
+@using System.Dynamic;
+@inherits DotNetNuke.Web.Razor.DotNetNukeWebPage<dynamic>
+    
+@RenderPages(Model.Source.root.Children)
+
+@helper RenderPages(IEnumerable<MenuNode> pages, bool isNested = false)
+{
+    if (!pages.Any())
+    {
+        return;
+    }
+
+    var classes = isNested ?
+        "menu" :
+        "dropdown menu align-right";
+    var attributes = isNested ?
+        string.Empty :
+        "data-dropdown-menu";
+
+    <ul @attributes class="@classes">
+        @foreach (var page in pages)
+        {
+            <li class="show-for-medium @(page.Selected ? "active" : string.Empty)">
+                @if (page.Enabled)
+                {
+                    <a href="@page.Url">@page.Text</a>
+                }
+                else
+                {
+                    <a href="#">@page.Text</a>
+                }
+
+                @if (page.HasChildren())
+                {
+                    @RenderPages(page.Children, true)
+                }
+            </li>
+        }
+
+        @if (!isNested)
+        {
+            <li class="hamburger-menu">
+                <button class="menu-icon" type="button" data-toggle="off-canvas-nav"></button>
+            </li>
+        }
+    </ul> 
+}
