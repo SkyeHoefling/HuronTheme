@@ -47,6 +47,14 @@ var paths = {
     src: './node_modules/foundation-sites/dist/js/foundation.min.*',
     dest: './dist/js/'
   },
+  prismCss: {
+    src: './lib/prismJS/prism.min.css',
+    dest: './dist/css/'
+  },
+  prismJs: {
+    src: './lib/prismJS/prism.min.js',
+    dest: './dist/js/'
+  },
   images: {
     src: './src/images/**/*.{jpg,jpeg,png,gif}',
     dest: './dist/images/'
@@ -140,6 +148,20 @@ function foundationJsInit() {
   return gulp.src(paths.foundationJs.src)
     .pipe(gulp.dest(paths.foundationJs.dest))
     .pipe(notify({message: '<%= file.relative %> distributed!', title : 'foundationJsInit', sound: false}));
+}
+
+// Copy PrismJS JS from node_modules to dist/js
+function prismJsInit() {
+  return gulp.src(paths.prismJs.src)
+    .pipe(gulp.dest(paths.prismJs.dest))
+    .pipe(notify({message: '<%= file.relative %> distributed!', title: 'prismJsInit', sound: false}));
+}
+
+// Copy PrismJS CSS from node_modules to dist/js
+function prismCssInit() {
+  return gulp.src(paths.prismCss.src)
+    .pipe(gulp.dest(paths.prismCss.dest))
+    .pipe(notify({message: '<%= file.relative %> distributed!', title: 'prismCssInit', sound: false}));
 }
 /*------------------------------------------------------*/
 /* END INIT TASKS --------------------------------------*/
@@ -299,7 +321,7 @@ function watch() {
 }
 
 // gulp init
-var init = gulp.series(fontsInit, faFontsInit, faCssInit, normalizeInit, foundationCssInit, foundationJsInit);
+var init = gulp.series(fontsInit, faFontsInit, faCssInit, normalizeInit, foundationCssInit, foundationJsInit, prismJsInit, prismCssInit);
 
 // gulp build
 var build = gulp.series(init, styles, scripts, images, containers, manifest);
@@ -321,6 +343,8 @@ exports.faCssInit = faCssInit;
 exports.normalizeInit = normalizeInit;
 exports.foundationCssInit = foundationCssInit;
 exports.foundationJsInit = foundationJsInit;
+exports.prismJsInit = prismJsInit;
+exports.prismCssInit = prismCssInit;
 exports.images = images;
 exports.styles = styles;
 exports.scripts = scripts;

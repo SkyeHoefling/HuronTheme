@@ -1,11 +1,12 @@
 /* ckeditor styles will slightly modify this */
 
-pre {
+pre.code-snippet {
     border: 1px solid #c4c4c4;
-    padding-left: 1em !important;
+    //padding-left: 1em !important;
+    padding-top: 1.75em !important;
 
     &[data-language]:after {
-        top: -1px;
+        top: 0;
         right: 10px;
         background: $codeblock-background;
         font-size: 10px;
@@ -17,8 +18,41 @@ pre {
         content: attr(data-language);
         position: absolute;
     }
+
+    
+
+    &[data-name]:before {
+        top: 0;
+        margin-left: -.9em;
+        background: $codeblock-background;
+        font-size: 16px;
+        font-family: var(--ck-font-face);
+        line-height: 16px;
+        padding: $codeblock-name-padding-topbottom $codeblock-name-padding-leftright;
+        color: #fff;
+        white-space: nowrap;
+        content: attr(data-name);
+        position: absolute;
+    }
     
     code {
         border: none;
+        padding:0;
+        display:block;
+
+        &:before {
+            top: -2.8em;
+            right: 30px;
+            background: $codeblock-background;
+            font-size: 10px;
+            font-family: var(--ck-font-face);
+            line-height: 16px;
+            padding: $codeblock-padding-topbottom $codeblock-padding-leftright;
+            color: #fff;
+            white-space: nowrap;
+            content: 'Copy';
+            position: absolute;
+            cursor: pointer;
+        }
     }
 }
